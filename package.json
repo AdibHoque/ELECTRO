@@ -1,0 +1,58 @@
+{
+  "name": "ELECTROBETA",
+  "version": "0.0.1",
+  "description": "Electrify & Boost Up Your Discord Server!",
+  "main": "index.js",
+  "engines": {
+    "node": "^12.x"
+  },
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "discord.js": "^12.2.0",
+    "quick.db": "^7.1.1",
+    "enmap": "^5.3.1",
+    "dotenv": "^8.2.0",
+    "http": "^0.0.0",
+    "common-tags": "^1.8.0",
+    "os": "^0.1.1",
+    "moment": "^2.26.0",
+    "moment-duration-format": "*", 
+    "cpu-stat": "^2.0.1",
+    "ms": "^2.1.2",
+    "reddit-simple": "^1.1.0",
+    "express": "^4.17.1",
+    "relevant-urban": "^2.0.0",
+    "node-fetch": "^2.6.0",
+    "query-string": "^6.13.1",
+    "alexa-bot-api": "^0.1.2",
+    "pornhub.js": "github:pionxzh/pornhub.js",
+    "snekfetch": "^4.0.4",
+    "mathjs": "^7.0.2",
+    "decode-encode-binary": "^1.4.13",
+    "canvas": "^2.6.1",
+    "amethyste-api": "^1.1.3",
+    "reverse-text": "^1.0.0",
+    "discord-logs": "^1.7.5",
+    "mongoose": "^5.9.25",
+    "pokedex.js": "^3.5.3",
+    "pokedex-promise-v2": "^3.1.1",
+    "request-promise-native": "^1.0.8",
+    "request": "^2.88.2",
+    "nekos.life": "^2.0.7",
+    "nekobot-api": "^1.3.3",
+    "parse-ms": "^2.0.0",
+    "blapi": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Discord",
+    "ELECTRO Bot",
+    "BETA",
+    "Bot"
+  ],
+  "author": "AdibHoque",
+  "license": "MIT"
+}
