@@ -1,5 +1,3 @@
-// we are gonna make a class which is how I do :)
-
 const { Client } = require("discord.js");
 const Enmap = require("enmap");
 
