@@ -2,14 +2,13 @@ const http = require("http");
 const express = require("express");
 const app = express();
 const {get} = require("request-promise-native");
+
 app.get("/", (request, response) => {
   console.log(Date.now() + " Ping Received");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
-/*setInterval(() => {
-  http.get(`https://electr.herokuapp.com/`);
-}, 280000);*/
+
 setInterval(() => {
   const ty = [
     'hentai',
@@ -66,11 +65,9 @@ if(c2) c2.send(p)
 const { Discord, MessageEmbed, Util} = require("discord.js");
 const Client = require("./Classes/Client");
 const client = new Client();
-const loadCMD = require("./functions/loadCMD");
+const loadCMD = require("./Functions/loadCMD");
 loadCMD(client); 
 const db = require("quick.db");
-const check = "<a:ElectroCheck:709464171825201315>";
-const fail = "<a:ElectroFail:656772856184832025>";
 let alexa = require("alexa-bot-api");
 let ai = new alexa("aw2plm");
 const Canvas = require("canvas");
@@ -111,13 +108,6 @@ function clean(text) {
   else return text;
 }
 
-const applyText = (canvas, text, defaultFontSize) => {
-  const ctx = canvas.getContext("2d");
-  do {
-    ctx.font = `${(defaultFontSize -= 10)}px Bold`;
-  } while (ctx.measureText(text).width > 600);
-  return ctx.font;
-};
 client.nsfwembed = new MessageEmbed().setDescription(`<a:ElectroAdultContentWarning:709467180642730055> **| PLEASE SWITCH TO A NSFW MARKED CHANNEL TO USE THIS COMMAND!**`).setColor(`#ff0000`)
 
 async function dropWallet(prefix, channel, author){
