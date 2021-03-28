@@ -65,8 +65,13 @@ if(c2) c2.send(p)
 const { Discord, MessageEmbed, Util} = require("discord.js");
 const Client = require("./Classes/Client");
 const client = new Client();
+
 const loadCMD = require("./Functions/loadCMD");
 loadCMD(client); 
+
+const loadEVENTS = require("./Functions/loadEVENTS");
+loadEVENTS(client); 
+
 const db = require("quick.db");
 let alexa = require("alexa-bot-api");
 let ai = new alexa("aw2plm");
