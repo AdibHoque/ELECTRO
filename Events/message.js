@@ -1,4 +1,31 @@
 const Config = require('./../Config.json')
+const mongoose = require('mongoose');
+const mongodb_guild = require('./Mongodb/guilds');
+const pre = require("./Mongodb/prefix")
+const lo = require("./Mongodb/logchannel")
+const u = require("./Mongodb/user") 
+
+function clean(text) {
+  if (typeof text === "string")
+    return text
+      .replace(/`/g, "`" + String.fromCharCode(8203))
+      .replace(/@/g, "@" + String.fromCharCode(8203));
+  else return text;
+} 
+
+async function dropWallet(prefix, channel, author){
+	const amount = Math.round(Math.random()*190+10)
+	await db.set(`wallet${channel.id}`,amount)
+  await db.delete(`tms${channel.id}`)
+	const embed = new MessageEmbed()
+  .setAuthor(author.username,author.avatarURL())
+	.setTitle("You found a dropped wallet!")
+	.setDescription(`Do you want to \`${prefix}pick\` it up?\nOr do you want to \`${prefix}return\` it to it's owner?`)
+	.setColor("#ffbf00")
+	.setThumbnail("https://cdn.discordapp.com/attachments/656517276832366595/763430782903255100/wallet_2.png")
+	channel.send(embed)
+	} 
+
 
 module.exports = async (client, message) => {
 if (message.author.bot) return;
