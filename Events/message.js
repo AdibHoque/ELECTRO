@@ -1,5 +1,8 @@
 const Config = require('./../Config.json')
 const mongoose = require('mongoose');
+const db = require("quick.db");
+let alexa = require("alexa-bot-api");
+let ai = new alexa("aw2plm");
 const mongodb_guild = require('./Mongodb/guilds');
 const pre = require("./Mongodb/prefix")
 const lo = require("./Mongodb/logchannel")
