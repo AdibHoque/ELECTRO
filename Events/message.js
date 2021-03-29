@@ -1,8 +1,10 @@
+const Config = require('./../Config.json')
+
 module.exports = async (client, message) => {
 if (message.author.bot) return;
   if (
     message.content.split(" ")[0] == "e!eval" &&
-    message.author.id === "496978159724396545"
+    message.author.id === Config.OWNER_ID
   ) {
     try {
       const code = message.content
