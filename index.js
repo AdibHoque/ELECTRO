@@ -105,28 +105,8 @@ async function delay(delayInms) {
   });
 }
 
-function clean(text) {
-  if (typeof text === "string")
-    return text
-      .replace(/`/g, "`" + String.fromCharCode(8203))
-      .replace(/@/g, "@" + String.fromCharCode(8203));
-  else return text;
-}
-
 client.nsfwembed = new MessageEmbed().setDescription(`<a:ElectroAdultContentWarning:709467180642730055> **| PLEASE SWITCH TO A NSFW MARKED CHANNEL TO USE THIS COMMAND!**`).setColor(`#ff0000`)
 
-async function dropWallet(prefix, channel, author){
-	const amount = Math.round(Math.random()*190+10)
-	await db.set(`wallet${channel.id}`,amount)
-  await db.delete(`tms${channel.id}`)
-	const embed = new MessageEmbed()
-  .setAuthor(author.username,author.avatarURL())
-	.setTitle("You found a dropped wallet!")
-	.setDescription(`Do you want to \`${prefix}pick\` it up?\nOr do you want to \`${prefix}return\` it to it's owner?`)
-	.setColor("#ffbf00")
-	.setThumbnail("https://cdn.discordapp.com/attachments/656517276832366595/763430782903255100/wallet_2.png")
-	channel.send(embed)
-	} 
 
 client.on("warn", console.warn);
 
