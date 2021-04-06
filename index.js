@@ -9,23 +9,26 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 
-setInterval(() => {
-  
-}, 30000);
-
-setInterval(() => {
-  
-}, 60000);
 
 const { Discord, MessageEmbed, Util} = require("discord.js");
 const Client = require("./Classes/Client");
 const client = new Client();
+const autoNSFW = require("./Functions/autoNSFW");
+const autoHentai = require("./Functions/autoHentai");
 
 const loadCMD = require("./Functions/loadCMD");
-loadCMD(client); 
-
 const loadEVENTS = require("./Functions/loadEVENTS");
+
+loadCMD(client);
 loadEVENTS(client); 
+
+setInterval(() => {
+  autoNSFW(client);
+}, 30000);
+
+setInterval(() => {
+  autoHentai(client);
+}, 60000); 
 
 const db = require("quick.db");
 let alexa = require("alexa-bot-api");
