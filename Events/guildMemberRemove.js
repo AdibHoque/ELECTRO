@@ -1,6 +1,15 @@
+const Canvas = require("canvas"); 
 const Config = require('./../Config.json')
 const mongoose = require('mongoose');
 const db = require("quick.db");
+
+const applyText = (canvas, text, defaultFontSize) => {
+  const ctx = canvas.getContext("2d");
+  do {
+    ctx.font = `${(defaultFontSize -= 10)}px Bold`;
+  } while (ctx.measureText(text).width > 600);
+  return ctx.font;
+}; 
 
 module.exports = async (client, member) => {
  let lChan = await db.fetch(`lc${member.guild.id}`);
